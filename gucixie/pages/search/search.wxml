@@ -1,0 +1,46 @@
+<!--pages/search/search.wxml-->
+<view class="search df">
+    <input class="df_1" placeholder="请输入你有搜索的内容" auto-focus focus="{{focus}}" value="{{searchValue}}" bindinput="searchValueInput"/>
+    <button bindtap="doSearch"><image class="searchcion" src="/images/search.png"></image></button>
+</view>
+<view class="cont" wx:if="{{hotKeyShow}}">
+    <text class="font_14" style="font-size:34rpx;">热门搜索</text>
+    <view class="w100">
+        <button wx:for="{{hotKeyList}}" bindtap="doKeySearch" data-key="{{item.keyword}}">{{item.keyword}}</button>
+    </view>
+    <text class="font_14 mt10" style="font-size:34rpx;">历史搜索</text>
+    <view class="w100">
+        <button wx:for="{{historyKeyList}}" bindtap="doKeySearch" data-key="{{item.keyword}}">{{item.keyword}}</button>
+    </view>
+</view>
+<view class="search_no" wx:if="{{showNosearch}}">
+    <view class="font_14"><image class="scimg" src="/images/search_no.png"></image></view>
+    <text>没有找到您要的宝贝/(ㄒoㄒ)/~~</text>
+</view>
+
+
+
+
+  <view class="c" wx:for="{{productData}}">
+    <view class="c_a" >
+      <navigator url="../product/product?productId={{item.id}}">
+        <view class="c_aa">
+          <image src="{{item.photo_x}}"></image>
+          <view class="c_b">
+            {{item.name}}
+          </view>
+          <view class="c_c">
+            <text>￥ {{item.price_yh}}</text>
+            <text class="c_yuan">￥ {{item.price}}</text>
+          </view>
+          <view class="c_d">
+            <text wx:if="{{item.is_show==1}}">新品上市</text>
+            <text wx:elif="{{item.is_hot==1}}">热销产品</text>
+            <text wx:else>店主推荐</text>
+            <text class="">库存：{{item.num}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>

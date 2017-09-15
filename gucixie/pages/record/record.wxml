@@ -1,0 +1,67 @@
+<view class="pages">
+  <view class="con">
+    <view class="k">积分总额</view>
+    <!--<view class="wen" bindtap="xieyi">
+
+        <image class="xi" src="../../images/wenhao.png"></image>
+
+     
+
+
+    </view>-->
+  </view>
+  <view class="two">
+    <p style='font-size:80rpx;color:red'>0</p>
+    <image class="two_img" src="../../images/ji.png"></image>
+  </view>
+
+</view>
+
+<!--头部-->   
+<view class="tab-left" bindtap="tabFun">
+  <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0">已获得</view>
+  <text style="color:#ccc">|</text>
+  <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-id="1">已使用</view>
+</view>
+ 
+<view class="tab-right" >
+
+  <view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+
+    <view class="boxx" wx:for="{{left}}">
+      <view class="png">
+        <image src="../../images/ji.png"></image>
+
+      </view>
+      <view class="fss">
+      {{item.jifen}}
+        
+      </view>
+      <view class="riqi">
+      获得日期：{{item.riqi}}</view>
+
+    </view>
+
+  </view>
+  <view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+
+    <view class="boxx" wx:for="{{right}}">
+      <view class="png">
+        <image src="../../images/ji.png"></image>
+
+      </view>
+      <view class="fss">
+      {{item.jifen}}
+        
+      </view>
+      <view class="riqi">
+      获得日期：{{item.riqi}}</view>
+
+    </view>
+
+
+
+  </view>
+
+
+</view>

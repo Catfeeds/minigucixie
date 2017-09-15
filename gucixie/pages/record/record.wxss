@@ -1,0 +1,146 @@
+page {
+  background: #fafafa;
+  font-family: '微软雅黑';
+  height: 100%;
+}
+.pages{
+ background: #fff;  height:250rpx;
+}
+.con {
+  width: 100%;
+  height:117rpx;
+ 
+}
+.con .k {
+  float: left;
+  font-size: 45rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  padding-left: 40rpx;
+  font-weight: 700;
+}
+
+.wen {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  display: inline-block;
+  float: right;
+}
+
+.xi {
+  width: 40rpx;
+  height: 40rpx;
+
+
+  display: inline-block
+}
+p{
+  margin-left: 94rpx;
+}
+.two_img {
+  width:50rpx;
+  height: 50rpx;
+  margin-left: 30rpx;
+}
+/*供求*/
+.tab{ 
+ flex-direction: row; 
+ width: 100%;
+} 
+.tab-left{ 
+ width: 100%; 
+ line-height: 160%; 
+ font-size: 29rpx;
+ border-right: solid 1px gray; 
+
+} 
+.tab-left view{ 
+    text-align: center;
+    display:inline-block;
+    width: 48%;
+  padding: 15rpx 0;
+} 
+.tab-left .active{ 
+ color: #f00; 
+border-bottom: solid 1px red; 
+} 
+.tab-right{ 
+ line-height: 160%; 
+} 
+.tab-right .right-item{ 
+ padding-left: 15rpx; 
+ display: none; 
+} 
+.tab-right .right-item.active{ 
+ display: block; 
+}
+.boxx{
+  width: 100%;
+  padding: 30rpx;
+  border-bottom:1px solid #F5F5F5 ;
+  padding-left: 0rpx;
+  background: #fff;
+  padding-bottom: 65rpx;
+}
+.riqi{
+    font-size: 25rpx;
+    display:inline-block;
+    color: #ccc;
+  float: right;
+    width:37%;
+    position: relative;
+    top: 0rpx;
+}
+.png{
+    width: 20%;
+    /*display: inline-block;*/
+    float: left;
+    line-height: 35rpx;
+}
+.png image{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+   margin-left:46rpx;
+   float:left;
+
+
+}
+.qiang{
+    width: 50%;
+    display: inline-block;
+    text-align: right;
+}
+.dan{
+    font-size: 30rpx;
+    padding: 10rpx 20rpx;
+    /*padding: 10rpx;*/
+    border: 1px solid #FF4040;
+    border-radius:10rpx; 
+    background: #FF4040;
+    color: white
+}
+.fss{
+    width: 70%;
+    height: 60rpx;
+    line-height: 50rpx;
+     font-size: 28rpx;
+     display: inline-block;    
+}
+.one1{
+    margin-top: 40rpx;
+    text-align: center;
+}
+.one1 text{
+    padding:20rpx 250rpx;
+    /*border: 1px solid #666;*/
+    font-size: 35rpx;
+    font-weight: 700;
+    border-radius: 10rpx;
+    box-shadow: 2px 2px 2px #888888;
+    background: #FF4040;
+    color: white
+}

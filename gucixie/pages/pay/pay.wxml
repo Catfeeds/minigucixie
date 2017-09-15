@@ -1,0 +1,87 @@
+<!--pay.wxml-->
+<view class="w100">
+    <!-- 产品循环数据 -->
+		<view class="p_all bg_white df item" wx:for="{{productData}}">
+			<view class="cp_photo">			
+				<image src="{{item.photo_x}}"></image>
+			</view>
+			<view class="df_1">	
+				<view class="font_14 mt5 ovh1">
+		           {{item.name}}
+		        </view>
+			<text class="gm_ovh_1h red pt10">¥{{item.price}}</text>
+			<text class="gm_ovh_1h pt10" style="font-size:26rpx" wx:if="{{item.buff != 'undefined' && item.buff != ''}}">数量：{{item.num}}  属性：{{item.buff}}</text>
+      <text class="gm_ovh_1h pt10" style="font-size:26rpx" wx:else>数量：{{item.num}}</text>
+			</view>
+		</view>
+    <!-- 产品循环数据 end -->
+    
+    <!-- 收货地址 -->
+    <view class="p_all bg_white mt10 font_14" wx:if="{{addemt==0}}">
+		  <navigator url="../address/user-address/user-address?cartId={{cartId}}" hover-class="none">
+			<view class="df">
+				<view class="df_1 c6">
+				<view class="l_h20">收货人：{{address.name}}<text class="fl_r mr10">{{address.tel}}</text></view>
+				<view class="l_h20 mt5">地址：{{address.address_xq}}</view>
+				</view>
+				<image class="x_right mt15" src="/images/x_right.png"></image>			
+			</view>
+			</navigator>
+		</view>
+
+		<view class="p_all bg_white mt10 font_14" wx:else>
+		  <navigator url="../address/user-address/user-address?cartId={{cartId}}" hover-class="none">
+			<view class="df tijian">
+			  <text>+</text>   
+        <text>添加收货地址</text>			
+			</view>
+			</navigator>
+		</view>	
+    <!-- 收货地址 end -->
+
+    <!-- <view class="box itemBox">
+      <view class="left">商品金额</view>
+      <view class="right">¥ {{order.sum}}</view>
+    </view>
+    <view class="box itemBox">
+      <view class="left">订单邮费</view>
+      <view class="right">¥ {{order.delivery_money}}</view>
+    </view> -->
+    <view class="box itemBox" bindtap="hui" data-id="{{one}}" wx:if="{{vou!=''}}">
+      <view class="left">优惠券</view>
+      <view class="right" style="color:gray;">></view>
+    </view>
+    <view wx:if="{{hui}}">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{vou}}" bindtap="getvou" data-id="{{item.vid}}" data-price="{{item.amount}}">
+          <radio value="{{item.vid}}" name="vou" />满{{item.full_money}}立减{{item.amount}}元
+        </label>
+        <label class="radio"  bindtap="getvou" data-id="0" data-price="0">
+          <radio value="0" name="vou" />不使用优惠劵  
+        </label>
+      </radio-group>
+    </view>
+
+		<view class="p_all bg_white mt10 font_14">
+			<textarea class="min_60" auto-height name="remark" placeholder="备注" bindinput="remarkInput" value="{{remark}}"/> 
+		</view>	
+
+	<view class="zhifu mt10 tc">应共支付：<span class="font_20 red">￥{{total}}</span></view>
+	<!-- <navigator url="##" hover-class="none" class="zhifu mt10">支付宝<image class="x_right" src="/images/x_right.png"></image></navigator> -->
+	<!-- <navigator url="##" hover-class="none" class="zhifu">银联支付<image class="x_right" src="/images/x_right.png"></image></navigator> -->
+	<!-- <navigator url="../order/downline" hover-class="none" class="zhifu">线下支付<image class="x_right" src="/images/x_right.png"></image></navigator>
+	<navigator url="../order/downline" hover-class="none" class="zhifu">线下支付<image class="x_right" src="/images/x_right.png"></image></navigator>
+ -->
+	<view class="p_all mt10">
+		<view class="btnGreen">
+			<!-- <button type="primary" id="btnPay" formType="submit" loading="{{loading}}" disabled="{{disabled}}">微信支付</button> -->
+			<!-- <navigator url="../order/detail" hover-class="none">
+				<button class="wx_pay_submit" type="primary" id="wxPay" formType="submit" >微信支付</button>
+				<button class="xx_pay_submit" type="default" id="xxPay" formType="submit" >线下支付</button>
+			</navigator> -->
+			<button class="wx_pay_submit" type="primary" id="wxPay" disabled="{{btnDisabled}}" formType="submit" bindtap="createProductOrderByWX">微信支付</button>
+			<!-- <button class="xx_pay_submit" type="default" id="xxPay" disabled="{{btnDisabled}}" formType="submit" bindtap="createProductOrderByXX">线下支付</button> -->
+			
+		</view>
+	</view>
+</view>

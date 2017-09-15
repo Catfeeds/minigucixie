@@ -1,0 +1,131 @@
+/* pages/user/user.wxss */
+
+.me {
+  height: 100%;
+}
+
+.cm {
+  width: 100%;
+  height: 320rpx;
+  position: absolute;
+  top: 0rpx;
+}
+
+.c_png {
+  width: 100%;
+  height: 320rpx;
+  z-index: 1;
+}
+
+.fl_r {
+  float: right;
+}
+
+.df_1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.userinfo {
+  position: relative;
+  width: 750rpx;
+  height: 320rpx;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  margin-top: 50rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.userinfo-nickname {
+  color: #fff;
+  font-size: 14px;
+}
+
+.sc {
+  background: #fff;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+  color: #666;
+  padding: 4% 0;
+}
+
+.sc image {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.bte {
+  border-top: 1px solid #eee;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tc {
+  text-align: center;
+}
+
+.qbdd {
+  background: #fff;
+  width: 92%;
+  font-size: 12px;
+  color: #666;
+  padding: 4%;
+  border-bottom: 1px solid #eee;
+}
+
+
+.gucixie{
+   font-size: 26rpx;
+   color: #999;
+   width: 100%;
+   text-align: center;
+   position: absolute;
+   bottom: 0%;
+   padding: 15rpx 0;
+}
+
+/*在线客服*/
+.lll{
+width:71rpx;
+height:69rpx;
+position:fixed;
+right:0px;
+bottom:140px;
+float: right
+}
+.lll image{
+width:100%;
+height:100%;
+}
+contact-button{
+position: relative;
+top:-35px;
+left:9px;
+opacity: 0;
+}
+.bottom{
+  margin-bottom: 10px;
+}
+.jifen {
+  color:#fff;
+  font-size:29rpx;
+
+}

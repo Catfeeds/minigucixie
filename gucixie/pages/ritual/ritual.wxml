@@ -1,0 +1,19 @@
+<view class="demo">
+  <!-- 效果4 begin -->
+  <view class="stamp stamp04" wx:for="{{can}}" data-id="{{item.id}}" bindtap='jj'>
+    <view class="par">
+      <p>{{item.ming}}</p>
+      <sub class="sign">￥</sub><span>{{item.amount}}元</span>
+      <sub>优惠券</sub>
+      <p>订单满{{item.full_money}}元</p>
+    </view>
+    <view class="copy">副券
+      <p>{{item.start_time}}</p>
+      <p>{{item.end_time}}</p>
+      <a href="#">立即领取</a>
+    </view>
+    <!--<i></i>-->
+  </view>
+  <!-- 效果4 end -->
+
+</view>

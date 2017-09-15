@@ -1,0 +1,37 @@
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:if="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="100%" height="180" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+  <!--线-->
+    <!--<view class="xian" wx:if="{{info}}"></view>-->
+     <!--推荐-->
+  <view class="chanping">{{con}}</view>
+
+  <view class="c">
+    <view class="c_a" wx:for="{{proList}}">
+      <navigator url="../product/product?productId={{item.id}}">
+        <view class="c_aa">
+          <image src="{{item.photo_x}}"></image>
+          <view class="c_b">
+            {{item.name}}
+          </view>
+          <view class="c_c">
+            <text>￥ {{item.price_yh}}</text>
+            <text class="c_yuan">￥ {{item.price}}</text>
+          </view>
+          <view class="c_d">
+            <text wx:if="{{item.is_show==1}}">新品上市</text>
+            <text wx:elif="{{item.is_hot==1}}">热销产品</text>
+            <text wx:else>店主推荐</text>
+            <text class="">库存：{{item.num}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>

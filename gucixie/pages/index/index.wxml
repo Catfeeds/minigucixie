@@ -1,0 +1,102 @@
+<!--index.wxml-->
+ <view class="page_input" bindtap="suo"> 
+  <icon type="search" size="20" /> 
+   <input type="text" placeholder="搜索商品" />
+</view> 
+<import src="../page1/page1.wxml"/>  
+
+<view class="container">
+
+<!--轮播图-->
+<template is="odd" data="{{data:carousel1}}"></template>
+<!--分类-->
+<template is="classify" data="{{data:carousel1}}"/>
+
+<template is="scroll" data="{{data:carousel1}}"/>
+
+
+
+
+
+<view class="section">
+  <video id="myVideo" src="{{info.vedio}}"  enable-danmu="false" controls></video>
+
+</view>
+
+
+  <!--内容-->
+   <view class="b" wx:for="{{proData}}">
+    <image src="{{item.photo}}" mode="scaleToFill" bindtap="bindimg" data-type="{{item.type}}" data-val="{{item.val}}" data-proid="{{item.pro_id}}" data-cid="{{item.cid}}" style="display:block;"></image>
+  </view> 
+
+
+  <!--底部放视频的-->
+  <!-- <view class="b" wx:for="{{but}}">
+    <image src="{{item.png}}"></image>
+    <view class="b_a">{{item.kc}}</view>
+    <view class="b_b">{{item.kpf}}</view>
+    <view class="e_a">
+
+      <view class="e_b">立即购买</view>
+
+      <view class="vdo"  bindtap="powerDrawer" data-statu="open"  >
+        <view class='vdo_a' >
+          <image src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=163847168,3839673510&fm=80&w=179&h=119&img.JPG"></image>
+        </view>
+        <view class="vdo_b">
+          <image src="../../images/baa.png"></image>
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <view class="xian"></view>
+  <!--客服-->
+  <view class="lll">
+       <image src="../../images/kf.png"> <contact-button></contact-button>  <contact-button></contact-button></image>
+    </view>
+  <!--推荐-->
+  <view class="chanping">为您推荐</view>
+
+  <view class="c">
+    <view class="c_a" wx:for="{{proList}}">
+      <navigator url="../product/product?productId={{item.id}}" style="padding:20rpx;">
+        <view class="c_aa">
+          <image src="{{item.photo_x}}"></image>
+          <view class="c_b">
+            {{item.name}}
+          </view>
+          <view class="c_c">
+            <text>￥{{item.price_yh}}</text>
+            <text class="c_yuan">￥{{item.price}}</text>
+          </view>
+          <view class="c_d">
+            <text wx:if="{{item.is_show==1}}">新品上市</text>
+            <text wx:elif="{{item.is_hot==1}}">热销产品</text>
+            <text wx:else>店主推荐</text>
+            <text class="">库存：{{item.num}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+  
+<view class="section">
+  <video id="myVideo" src="{{info.vedio}}"  enable-danmu="false" controls></video>
+
+</view>
+
+
+</view>

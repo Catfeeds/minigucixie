@@ -1,0 +1,45 @@
+<view class="data_bottom">
+  <view class="data"  id="{{index+5}}" bindtap="pingjia">
+    <view class="pingjia">
+      <image src="{{proData.photo_x}}"></image>
+      <view class="pingjia_hao">
+        <view class="">
+          <text>{{proData.name}}</text>
+        </view>
+         <text class="pingjia_text">x{{pronum}}</text> 
+        <view class="">
+          <text>￥{{proData.price_yh}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="star">
+      <text>满意度</text>
+      <view bindtap="star_click">
+        <image src="../../images/{{star}}.png" id="0"></image>
+        <image src="../../images/{{star01}}.png" id="1"></image>
+        <image src="../../images/{{star02}}.png" id="2"></image>
+        <image src="../../images/{{star03}}.png" id="3"></image>
+        <image src="../../images/{{star04}}.png" id="4"></image>
+      </view>
+    </view>
+    <view class="textarea">
+    <textarea bindinput="bindTextAreaBlur" auto-height maxlength="255" placeholder="宝贝满足你的期待吗？说出它的优点和美中不足的地方吧" name="content" />
+    </view>
+  </view>
+</view>
+
+
+
+<view class="fixed">
+  <view class="niming" bindtap="icon">
+    <!-- <view class="niming_icon">
+      <icon type="success" color="#d9d9d9" size="22" wx:if="{{iconn}}" /> 
+      <icon type="success" size="20" color="#e95b00" wx:else/>
+      <text>匿名评价</text>
+    </view> -->
+    <view class="button">
+      <button type="primary" loading="{{loading}}" plain="{{plain}}"
+            disabled="{{disabled}}" bindtap="sendContent"> 发表评论 </button>
+    </view>
+  </view>
+</view>

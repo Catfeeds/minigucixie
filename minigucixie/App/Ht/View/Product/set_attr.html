@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理</title>
+<link href="__PUBLIC__/ht/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/ht/js/jquery.js"></script>
+<style>
+.dx1{float:left; margin-left: 17px; margin-bottom:10px; }
+.dx2{color:#090; font-size:16px;  border-bottom:1px solid #CCC; width:100% !important; padding-bottom:8px;}
+.dx3{width:120px; margin:5px auto; border-radius: 2px; border: 1px solid #b9c9d6; display:block;}
+.dx4{border-bottom:1px solid #eee; padding-top:5px; width:100%;}
+</style>
+<script type="text/javascript" src="__PUBLIC__/ht/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+<div class="aaa_pts_show_1">【 产品管理 】</div>
+
+<div class="aaa_pts_show_2">
+    <div>
+       <div class="aaa_pts_4"><a href="{:U('set_attr')}?pid={$pro_id}">设置规格</a></div>
+       <div class="aaa_pts_4"><a href="{:U('pro_guige')}?pid={$pro_id}">规格管理</a></div>
+       <!-- <div class="aaa_pts_4"><a href="{:U('pro_attr')}?pid={$pro_id}">属性组合管理</a></div> -->
+    </div>
+    <div class="aaa_pts_3">
+      <form action="{:U('save_guide')}" method="post" onsubmit="return ac_from();">
+      <ul id="ul" class="aaa_pts_5">
+        <li class="product"><div class="d1 dx2">产品信息</div></li>
+        <li class="product">
+            <div class="d1">产品名称:</div>
+            <div>
+              <span style="font-weight:bold;">{$pro_info.name}</span>
+            </div>
+         </li>
+         <li class="product">
+            <div class="d1">产品价格:</div>
+            <div>
+              <span style="font-weight:bold; color:red;">¥{$pro_info.price_yh}元</span>
+            </div>
+         </li>
+         <li class="product">
+            <div class="d1">库&nbsp;&nbsp;存:</div>
+            <div>
+              <span style="font-weight:bold; color:red;">{$pro_info.num}</span>
+            </div>
+         </li>
+         <li class="product"><div class="d1 dx2">属性规格信息</div></li>
+         <li class="product"><div style="color:red;font-size:12px;">注：如果已经添加好规格，请不要随意修改，以免已经下单购买的用户所买规格与商品实际规格描述不一致</div></li>
+         <li class="product">
+           <button type="button" id="button1" onclick="chk_info();">＋添加规格</button>
+         </li>
+        <li id="guige" class="product">
+          <!-- <div class="gg">
+            <div class="d1">规格名：</div>
+            <div>
+              <input class="inp_1" style="width:170px;" name="attr_name" id="attr_name" value="{$pro_allinfo.name}"/><label style="color:gray;">(比如：颜色)</label>
+            </div>
+            <ul style="clear:both;padding-top:10px;">
+              <li>
+                <div class="d1">规格项：</div>
+                <div id="divs">
+                  <div>
+                  <input class="inp_1" style="width:80px;" placeholder="规格名称" name="gg_name[]" value="" />
+                  <input class="inp_1" style="width:60px;" placeholder="价格" name="gg_price[]" value="" />
+                  <input class="inp_1" style="width:60px;" placeholder="库存" name="gg_stock[]" value="" />
+                  </div>
+                </div>&nbsp;&nbsp;
+                <div class="img-jian" id="jiangg" onclick="jian(this);">－</div>
+                <div class="img-add" onclick="upadd(this);">＋</div>
+              </li>
+              <li>
+                <button type="button" id="button2" onclick="del_info(this);">－删除规格</button>
+              </li>
+            </ul>
+          </div> -->
+            <!-- <div class="d1">规  格:</div>
+            <div id="divs">
+              <input class="inp_1" style="width:100px;" name="gg_name[]" value="" />
+            </div>&nbsp;&nbsp;
+            <div class="img-jian" id="jiangg" onclick="jian(this);">－</div>
+            <div class="img-add" onclick="upadd(this);">＋</div> -->
+         </li>
+         <li><input type="submit" name="submit" value="提交" class="aaa_pts_web_3" style="width: 100px;height: 35px;" border="0">
+         	<input type="hidden" name="pro_id" value="<?php echo $pro_id; ?>">
+          <input type="hidden" name="set_attrid" id="set_attrid" value="">
+         </li>
+      </ul>
+      </form>
+         
+    </div>
+    
+</div>
+<script>
+function chk_info(){
+  var checkbox = $("#guige").children().length;
+  if (checkbox>=4) {
+    alert('每个产品只能添加4种规格属性');
+    return false;
+  };
+
+  var info = '<div class="gg"><div class="d1">规格名：</div><div><input class="inp_1" style="width:170px;" name="attr_name[]" id="attr_name" value="{$pro_allinfo.name}"/><label style="color:gray;">(比如：颜色，尺寸。规格项按照‘名称、价格，库存’顺序填写)</label></div><ul style="clear:both;padding-top:10px;"><li><div class="d1">规格项：</div><div id="divs"><div><input class="inp_1" style="width:80px;" placeholder="规格名称" name="gg_name['+checkbox+'][]" value="" /><input class="inp_1" style="width:60px;" placeholder="价格" name="gg_price['+checkbox+'][]" value="<?php echo $pro_info["price_yh"]; ?>" /><input class="inp_1" style="width:60px;" placeholder="库存" name="gg_stock['+checkbox+'][]" value="<?php echo $pro_info["num"]; ?>" /></div></div>&nbsp;&nbsp;<div class="img-jian" id="jiangg" onclick="jian(this);">－</div><div class="img-add" onclick="upadd(this,'+checkbox+');">＋</div></li><li><button type="button" id="button2" onclick="del_info(this);">－删除规格</button></li></ul></div>';
+  $('#guige').append(info);
+}
+
+function upadd(obj,nums){
+  var info = '<label style="float: left;margin-left: 4px;">|</label><div><input class="inp_1" style="width:80px;margin-left:3px;" placeholder="规格名称" name="gg_name['+nums+'][]" value="" /><input class="inp_1" style="width:60px;" placeholder="价格" name="gg_price['+nums+'][]" value="<?php echo $pro_info["price_yh"]; ?>" /><input class="inp_1" style="width:60px;" placeholder="库存" name="gg_stock['+nums+'][]" value="<?php echo $pro_info["num"]; ?>" /></div>';
+  $(obj).siblings('#divs').append(info);
+}
+
+function jian(obj){
+  $(obj).siblings('#divs').children('div:last-child').remove();
+}
+
+function del_info(obj){
+  $(obj).parents('.gg').remove();
+}
+
+function ac_from(){
+  //判断栏目名称
+  /*var attr_name=document.getElementById('attr_name').value;
+  if(attr_name.length<1){
+	  alert('请输入属性名称.');
+	  return false;
+	  }*/
+
+  return true;
+}
+</script>
+</body>
+</html>

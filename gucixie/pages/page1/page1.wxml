@@ -1,0 +1,66 @@
+<!--轮播-->
+<template name="odd">
+  <swiper indicator-dots="{{data.indicatorDots}}" autoplay="{{data.autoplay}}" interval="{{data.interval}}" duration="{{data.duration}}" style="height:{{data.height}}">
+    <block wx:for="{{data.imgUrls}}">
+      <swiper-item>
+        <image src="{{item.photo}}" class="slide-image" width="100%" height="180" />
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+<!--轮播-->
+
+<!--搜索-->
+<template name="search">
+  <view class="sousuo" bindtap="suo">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <text style="font-size:30rpx;color:#999">{{data.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<!--搜索-->
+
+
+<!--横滑动-->
+<template name="scroll">
+  <view class="brand_stree">
+    <view class="brand">
+      <view class="" style="flex:0.1"> </view>
+      <view class="" style="flex:0.8;font-size:{{data.stor}}">{{data.brand}}</view>
+      <view class="" style="flex:0.1">
+        <image src="../../images/right.png"></image>
+      </view>
+    </view>
+    <scroll-view scroll-x="true" class="sc">
+      <view class="miu" wx:for="{{data.shop}}" data-id="{{item.id}}" bindtap="product">
+        <view class="miu_a">
+          <view class="img">
+            <image src="{{item.photo_x}}"></image>
+            <view class="img_a">{{item.name}}</view>
+            <view class="img_b">{{item.price_yh}}
+              <text>{{item.price}}</text>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</template>
+<!--横滑动-->
+
+<!--分类-->
+<template name="classify">
+  <view class="b_a">
+    <view class="b_aa" wx:for="{{data.b}}" bindtap="{{item.link}}" style="{{data.width}};" data-id="{{item.id}}" data-ptype="{{item.ptype}}" data-text="{{item.name}}">
+      <image src="{{item.imgs}}" style="width:{{data.comm}};height:{{data.comm}};"></image>
+      <view class="b_zi">{{item.name}}</view>
+    </view>
+  </view>
+</template>
+<!--分类-->

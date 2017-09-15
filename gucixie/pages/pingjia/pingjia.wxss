@@ -1,0 +1,98 @@
+.pingjia image{
+  width: 115rpx;
+  height: 120rpx;
+}
+.pingjia {
+  display: flex;
+  font-size: 28rpx;
+  font-family: "微软雅黑";
+  padding: 20rpx 0 20rpx 50rpx;
+}
+.pingjia_hao {
+   margin-left: 20rpx ; 
+}
+.textarea {
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  height:200rpx;
+  padding: 20rpx;
+   box-sizing: border-box; 
+   overflow: hidden;
+}
+.pingjia_text {
+  color:#bdbdbd;
+}
+.textarea textarea {
+  height: 200rpx;
+  font-size: 28rpx;
+  font-family: "微软雅黑";
+  width: 100%;
+}
+.niming {
+  padding-left:20rpx;
+  box-sizing:border-box;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  font-family: "微软雅黑";
+   display:flex;
+  position: relative;
+
+
+}
+.fixed {
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+}
+.niming icon {
+   vertical-align: middle; 
+  margin-top: 17rpx;
+  margin-right: 10rpx;
+  font-size: 28rpx;
+  font-family: "微软雅黑";
+}
+.text {
+  color: #bdbdbd;
+  float: right;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+}
+.button {
+  width: 30%;
+  box-sizing:border-box;
+   position: fixed;
+  right: 20rpx; 
+  bottom: 5rpx;
+}
+.button button {
+  width: 100%;
+  background: #fc5300;
+   font-size: 26rpx; 
+}
+.star image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.star {
+  display: flex;
+  font-size: 28rpx;
+  font-family: "微软雅黑";
+  padding-left: 50rpx;
+  margin: 10rpx 0;
+}
+.star text {
+  margin-right: 100rpx; 
+}
+.niming_icon {
+  position: fixed;
+  left: 50rpx;
+  bottom: -36rpx;
+}
+.data {
+  margin-bottom: 20rpx;
+}
+.data_bottom {
+  padding-bottom: 55rpx;
+}

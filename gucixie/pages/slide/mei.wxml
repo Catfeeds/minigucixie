@@ -1,0 +1,54 @@
+<view class="containe">
+  <view class="tab-left" bindtap="tabFun">
+    <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}} j" id="tab-hd01" data-id="0">
+    综合
+    </view>
+<!--需复制替换-->
+    <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}} j" id="tab-hd02" data-id="1" data-p="{{p}}" >销量
+  <!-- 向上的三角形 -->
+  <view class="triangle-up {{tabArr.ab=='4'? 'san' : ''}}"></view>
+   <!--三角形下-->
+    <view class="triangle-down {{tabArr.ab=='5'? 'sa' : ''}}"></view>
+ <!--三角形下-->
+ </view>
+<!--需复制替换-->
+    <view class="{{tabArr.curHdIndex=='2'? 'active' : ''}} j" id="tab-hd01" data-id="2" data-t="{{t}}">价格
+  <!-- 向上的三角形 -->
+  <view class="triangle-up {{tabArr.agg=='4'? 'san' : ''}}"></view>
+   <!--三角形下-->
+    <view class="triangle-down {{tabArr.agg=='5'? 'sa' : ''}}"></view>
+ <!--三角形下-->
+    </view>
+    <view class="{{tabArr.curHdIndex=='3'? 'active' : ''}} j" id="tab-hd02" data-id="3">最近</view>
+  </view>
+
+
+
+  <view class="tab-right">
+    <!--<view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">-->
+      <view class="cont">
+          <view class="shop df" wx:for="{{proList}}" bindtap="ti" data-id="{{item.id}}">
+           <view class="shf" >
+            <image class="sh_slt" src="{{item.photo_x}}"></image>
+          
+          </view>
+            <view class="df_1">
+              <view class="sp_text">
+                <view class="sp_tit ovh1">{{item.name}}</view>
+                <!-- <view class="intro">{{item.intro}}</view> -->
+                <view class="sp_jg">
+                <text>￥ <text style="font-size:16px;">{{item.price_yh}}</text></text>
+  <text  style="text-decoration:line-through;color:#999;font-size:26rpx;margin-left:12rpx;">￥ {{item.price}}</text>
+  </view>
+                <view class="sp_j" wx:if="{{item.is_show==1}}">新品上市</view>
+                <view class="sp_j" wx:elif="{{item.is_hot==1}}">热销产品</view>
+                <view class="sp_j" wx:else>店主推荐</view>
+                <view class="sp"><text>{{item.shiyong}} 人购买</text></view>
+              </view>
+            </view>
+          </view>
+      </view>
+    <!--</view>-->
+  </view>
+
+</view>

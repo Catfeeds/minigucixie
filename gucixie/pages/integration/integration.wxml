@@ -1,0 +1,34 @@
+<view class="contion">
+
+<view class="pages" wx:for="{{chanpin}}">
+  <view class="shang">
+    <!--<image class="cheng" src="../../images/shang1.png"></image>-->
+    <view class="left">
+      <image class="kk" src="{{item.img}}"></image>
+      <!--<text>{{item.jin}}</text>-->
+    </view>
+    <view class="right">
+      <p class='ming' style>{{item.mingcheng}}</p>
+      <p class='jifen'><image class="jifen_img" src="../../images/ji.png"></image>{{item.ji}}</p>
+      <view class="xiang" bindtap="xiang">
+        兑换
+      </view>
+      <span class='riqi'>{{item.xiao}} </span>
+    </view>
+  </view>
+</view>
+</view>
+<view class="tarr">
+<view class="left_a">
+    <image class="left_img" src="../../images/ji.png"></image>
+    <view class="left_text">
+         <text style="font-size:50rpx;letter-spacing:2rpx;">10</text>
+         <text style="margin-left:20rpx;font-size:30rpx;color:#ccc">我的积分</text>
+     </view>
+</view>
+<view class="right_a" bindtap="xi">
+   我的明细  <text>〉</text>
+</view>
+
+</view>
+

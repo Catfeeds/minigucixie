@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理</title>
+<link href="__PUBLIC__/ht/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/ht/js/jquery1.8.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ht/js/action.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ht/js/jCalendar.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ht/js/jquery.XYTipsWindow.min.2.8.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ht/js/mydate.js"></script>
+<link href="__PUBLIC__/ht/css/order.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="aaa_pts_show_1">【 商品评价 】</div>
+
+
+<div class="aaa_pts_show_2">
+    <div>
+       <!-- <div class="aaa_pts_4"><a href="{:U('order_count')}?shop_id={$shop_id}">销售统计</a></div> -->
+       <div class="aaa_pts_4"><a href="{:U('content')}">商品评价</a></div>
+    </div>
+    
+    <div class="aaa_pts_3">
+      <table class="pro_3">
+         <tr class="tr_1">  
+           <td style="width:60px;">ID</td>
+           <td style="width:80px;">订单ID</td>
+           <td style="width:80px;">商品ID</td>         
+           <td style="width:60px;">用户</td>         
+           
+           <td>评价内容</td>
+           <td style="width:60px;">满意度</td>
+           <td style="width:180px;">评价时间</td>
+           <td style="width:60px;">状态</td>
+           <td style="width:180px;">操作</td>
+         </tr>
+         <volist name='content' id='content'>
+         <tr>
+		        <td>{$content.id}</td>
+           <td>{$content.order_id}</td>
+            
+           <td>{$content.pid}</td>
+           <td>{$content.username}</td>
+           <td>{$content.concent}</td>
+    		   <td>{$content.num}星</td>
+          <td>{$content.addtime|date='Y-m-d H:i:s',###}</td>
+    		   <td class="status">
+    		   	<if condition="$content.audit eq 1"><font style="color:red">已审核</font>
+    		   	<elseif condition="$content.audit eq 0" /><font style="color:#900">未审核</font>
+    		   	<else />
+    		   </if>
+           </td>
+           <td>
+            <a href="{:U('reply_content')}?id={$content.id}">回复</a> | 
+    		    <a href="{:U('pass_content')}?id={$content.id}">审核/取消审核</a> | 
+    			  <a onclick="del_id_url({$content.id})">删除</a>
+    		   </td>
+	     </tr>
+		 </volist>
+      <tr>
+            <td colspan="10" class="td_2">
+                {$page} 
+             </td>
+         </tr>
+      </table>
+    </div>
+    
+</div>
+
+<script>
+
+//订单删除方法
+function del_id_url(id){
+   if(confirm("确认删除吗？"))
+   {
+	  location='{:U("del_content")}?id='+id;
+   }
+}
+</script>
+</body>
+</html>

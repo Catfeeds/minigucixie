@@ -1,0 +1,156 @@
+page {
+  background: #fafafa;
+  font-family: '微软雅黑';
+  height: 100%;
+}
+.contion{
+  padding-bottom: 200rpx;
+
+}
+.pages {
+  margin: 0 auto;
+}
+
+.shang {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  height: 280rpx;
+  background: #fff;
+  margin-top: 70rpx;
+  /*padding: 20rpx;*/
+  padding-left: 10rpx;
+ 
+  -webkit-box-shadow: 2px 2px 10px #909090;
+  border-radius: 10rpx;
+  font-family: '微软雅黑';
+}
+
+.left {
+  width: 50%;
+  height: 300rpx;
+  margin: 20rpx;
+  line-height: 10px;
+}
+
+.left text {
+font-size:19rpx;
+color:#999;
+padding-top:15rpx;
+display:block;
+position:relative;
+left:-1rpx;
+
+}
+
+.left .kk {
+  width: 100%;
+  height: 73%;
+}
+
+.right {
+  border-left: 2px dashed rgba(0, 0, 0, 0.1);
+  width: 50%;
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+
+.right p {
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-family: '微软雅黑';
+ 
+}
+
+.ming {
+  font-weight: 700;
+  font-size: 30rpx;letter-spacing: 4rpx;
+line-height:40rpx;
+height:80rpx;
+
+}
+
+.xiang {
+width:50%;
+background-color:#da0909;
+color:#fff;
+font-size:24rpx;
+text-decoration:none;
+padding:4px 10px;
+border-radius:3px;
+display:block;
+text-align:center;
+margin:0 auto;
+margin-top:32rpx;
+
+}
+
+.riqi {
+  margin-top: 15rpx;
+  font-size:19rpx;
+  color: #ccc;text-align:center;
+display: block;
+}
+
+.jifen {
+  font-size: 32rpx;
+  color: red;
+  padding: 5rpx 0;
+}
+
+.jifen_img {
+  height: 25rpx;
+  width: 25rpx;
+  padding: 0 10rpx;
+}
+
+.cheng {
+  width: 131rpx;
+  height: 52rpx;
+  position: absolute;
+}
+
+.tarr {
+  width: 100%;
+  height: 109rpx;
+  background: rgba(218, 9, 9,0.9);
+  position: fixed;
+  top: 91%;
+  display: flex;
+  line-height: 109rpx;
+  color: #fff;
+}
+
+.left_a {
+  width: 65%;
+  line-height: 109rpx;
+  display: flex;
+}
+
+.left_img {
+  height: 50rpx;
+  width: 50rpx;
+  display: block;
+  padding-top: 25rpx;
+  padding-left: 34rpx;
+}
+
+.left_text {
+  height: 100%;
+  margin-left: 30rpx;
+  line-height: 109rpx;
+}
+
+.right_a {
+  width: 35%;
+  font-size: 35rpx;
+  text-align: center;
+  border-left: 1px solid #fcfcfc;
+  font-family: '微软雅黑';
+  letter-spacing: 5rpx;
+  padding-left: 5rpx;
+
+}

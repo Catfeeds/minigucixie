@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理</title>
+<link href="__PUBLIC__/ht/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/ht/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ht/js/action.js"></script>
+</head>
+<body>
+<div class="aaa_pts_show_1">【 首页产品推荐 】</div>
+<div class="aaa_pts_show_2">
+    <div>
+      <div class="aaa_pts_4"><a href="{:U('More/indexpro')}">所有推荐</a></div>
+      <div class="aaa_pts_4"><a href="{:U('More/addpro')}">添加推荐</a></div>
+    </div>
+    <div class="aaa_pts_3">     
+      <table class="pro_3">
+         <tr class="tr_1">
+            <td style="width:110px;">产品图</td>
+            <td>推荐标题</td>
+            <td style="width:120px;">标题尺寸颜色</td>
+            <td>广告词</td>
+            <td style="width:130px;">广告词尺寸颜色</td>
+            <td style="width:90px;">跳转</td>
+            <td style="width:100px;">状态</td>
+            <td style="width:90px;">排序</td>
+            <td style="width:180px;">操作</td>
+         </tr>
+         <tbody id="news_option">
+           <!-- 遍历 -->
+           <volist name="list" id="v">
+             <tr data-id="{$v.id}" data-name="{$v.name}">
+               <td><img src="__DATA__/{$v.photo}" width="100px" height="100px"></td>
+               <td>{$v.title}</td>
+               <td>{$v.fontsize} | <label style="color:{$v.fontcolor}">{$v.fontcolor}</label></td>
+               <td>{$v.intro}</td>
+               <td>{$v.introsize} | <label style="color:{$v.introcolor}">{$v.introcolor}</label></td>
+               <td>
+                <if condition="$v.type eq 'pro'">商品详情
+                <elseif condition="$v.type eq 'index'" />首页
+                <elseif condition="$v.type eq 'procat'" />商品分类页
+                <else />无</if>
+               </td>
+               <td><if condition="$v.state eq 1" style="color:green;">推荐中</if></td>
+               <td>{$v.sort}</td>
+               <td class="obj_1">
+                <a href="{:U('More/uppro')}?id={$v.id}">
+                  <if condition="$v.state eq 1">取消推荐</if>
+                  <if condition="$v.state eq 2">推荐</if>
+                </a> | 
+                <a href="{:U('More/addpro')}?id={$v.id}">修改</a>
+               </td>
+             </tr>
+           </volist>
+           <!-- 遍历 -->
+         </tbody>
+         <tr>
+            <td colspan="10" class="td_2">
+              {$page_index}
+            </td>
+         </tr>
+      </table>      
+    </div>
+    
+</div>
+<script>
+//搜索的方法
+function product_option(page){
+  window.location.href='?page='+page+'&message='+$("#message").val()
+}
+// function del_id_url(id){
+//   alert({:U("More/fankui")});return false
+//   //var yes=confirm('确定删除？')
+
+//   if(yes){$.ajax({
+//     type:'post',
+//     url:'{:U("More/fankui")}',
+//     data:{'id':id},
+//     success:function(msg){
+//       if(msg==1){
+//         location.reload()
+//       }
+//     }
+//    }) 
+//   }
+// }
+</script>
+</body>
+</html>

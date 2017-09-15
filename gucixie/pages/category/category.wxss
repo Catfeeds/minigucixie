@@ -1,0 +1,126 @@
+.section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 90px;
+  background: #f6f6f6;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.left::before {
+  content: "";
+  position: absolute;
+  background: #dcdcdc;
+  right: 0;
+  top: 0;
+  height: 100%;
+  /*border-right: 1rpx solid #dcdcdc;*/
+}
+
+.left view.active {
+  background: #fff;
+  position: relative;
+  z-index: 2;
+  /*color: red;*/
+}
+
+.left view {
+  display: block;
+  padding: 30rpx 0;
+  text-align: center;
+  border-bottom: 1px solid #EEE9E9;
+}
+
+.jk {
+  font-size: 28rpx;
+}
+
+.right {
+  margin-left: 90px;
+  height: 100%;
+  overflow: hidden;
+  width: auto;
+  background: #fff;
+}
+
+.right text {
+  font-size: 30rpx;
+}
+
+.typeTree {
+  padding-top: 10px;
+  width: 100%;
+}
+
+.typeTree .item {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.typeTree .brand, .typeTree .category {
+  flex-wrap: wrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 40%;
+  margin-left: 6%;
+}
+
+.typeTree .title {
+  padding: 10px 0;
+  display: block;
+  color: #333;
+}
+
+.typeTree image {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.typeTree .brand image {
+  height: 100px;
+}
+
+.typeTree .category image {
+  height: 85px;
+}
+
+.typeTree .category {
+  padding-bottom: 10px;
+}
+
+.item text {
+  padding-bottom: 10px;
+  display: block;
+}
+/*在线客服*/
+.lll{
+width:71rpx;
+height:69rpx;
+position:fixed;
+right:0px;
+bottom:140px;
+float: right
+}
+.lll image{
+width:100%;
+height:100%;
+}
+contact-button{
+position: relative;
+top:-35px;
+left:9px;
+opacity: 0;
+}
+.bottom{
+  margin-bottom: 10px;
+}
